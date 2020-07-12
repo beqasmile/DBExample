@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class CarBlankForm : Form
     {
-        public Form1()
+        public CarBlankForm()
         {
             InitializeComponent();
         }
@@ -43,15 +43,28 @@ namespace WindowsFormsApp1
             Int32 newProdID = (Int32)sqlCheckCommand.ExecuteScalar();
             if (newProdID>0)
             {
-                MessageBox.Show("Car with this id already exists!!");
+                SqlCommand sqlUpdateCommand = new SqlCommand();
                 return;
             }
 
 
-            SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES (+" + txtId.Text + ", "+ txtSize.Text + ",'" + txtCompany.Text +  "', '" + txtComments.Text +"')", cnn);
+            //SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES (+" + txtId.Text + ", "+ txtSize.Text + ",'" + txtCompany.Text +  "', '" + txtComments.Text +"')", cnn);
+            SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES @ID, @CarSize, @CarCompany, @CarColor, Comments", cnn);
 
-            
-            
+            SqlParameter sqlParameter = new SqlParameter("ID", txtId.Text);
+            sqlCommand.Parameters.Add(sqlParameter);
+
+            SqlParameter sqlParameter1 = new SqlParameter("CarSize", txtSize.Text);
+            sqlCommand.Parameters.Add(sqlParameter1);
+            SqlParameter sqlParameter2 = new SqlParameter("CarCompany", txtCompany.Text);
+            sqlCommand.Parameters.Add(sqlParameter2);
+            SqlParameter sqlParameter3 = new SqlParameter("CarColor", txtColor.Text);
+            sqlCommand.Parameters.Add(sqlParameter3);
+            SqlParameter sqlParameter4 = new SqlParameter("Comments", txtComments.Text);
+            sqlCommand.Parameters.Add(sqlParameter4);
+
+
+
 
             sqlCommand.ExecuteScalar();
 

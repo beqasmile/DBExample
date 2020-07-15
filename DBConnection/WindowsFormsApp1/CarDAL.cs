@@ -61,6 +61,8 @@ namespace WindowsFormsApp1
         }
         public void InsertCar(Car car)
         {
+
+
             //SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES (+" + txtId.Text + ", "+ txtSize.Text + ",'" + txtCompany.Text +  "', '" + txtComments.Text +"')", cnn);
             SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES @ID, @CarSize, @CarCompany, @CarColor, Comments", this.myConnection);
 

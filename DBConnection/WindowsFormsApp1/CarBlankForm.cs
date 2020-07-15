@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class CarBlankForm : Form
     {
+        private int numberOfCars = 0;
         public CarBlankForm()
         {
             InitializeComponent();
@@ -20,9 +22,15 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
 
+            numberOfCars++;
+            int maxNumberOfCar = int.Parse(ConfigurationManager.AppSettings["MaxCarNumber"]);
 
+            if (numberOfCars > maxNumberOfCar)
+            {
+                MessageBox.Show("U pass max number of cars");
+                return;
+            }
 
             string connetionString = null;
             SqlConnection cnn;

@@ -53,9 +53,48 @@ namespace WindowsFormsApp1
             String xRemove = x3.Remove(5, 10); // "Hello World World World World World" => "Hello World World World World World"
 
             String x4 = "Hello World World World World World";
+
+            
             int xIndexOf = x4.IndexOf("World");//  xIndex
 
+            string world = "World";
 
+            String x5 = x4.Remove(x4.IndexOf("World"), "World".Length);
+
+
+
+            String x6 = "Hello World";
+            string xHelloWithoutBlank = x6.Substring(0, "Hello".Length) + x6.Substring(x6.IndexOf("World"), "World".Length);
+
+
+
+            String x7 = "Hello World Split";
+            string[] arrayOfWorld = x4.Split(' ');
+
+            if (x5!=x6)
+            {
+
+            }
+
+            if  (String.IsNullOrEmpty(x7) && x7.Length==0 && x7.Contains("Split"))
+            {
+
+            }
+
+
+            if (String.IsNullOrWhiteSpace(x7) && x7.Length == 0 && x7.Contains("Split"))
+            {
+
+            }
+
+            String xHello = "Hello";
+            String xWorld = "World";
+            String xHelloWorld = String.Concat(xHello, " " , xWorld, " ", xHello, " ", xWorld);
+
+            String xHelloWorldCopy = String.Copy(xHelloWorld);
+            string str1 = "ppp";
+            object objClone = str1.Clone();
+            Console.WriteLine("Clone :" + objClone.ToString());  
             // C# is a Case Sensitive language!!! "Hello World" != "Hello WOrld"
             int leng = 2;
         }

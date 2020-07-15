@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,10 @@ namespace WindowsFormsApp1
         
         private SqlConnection myConnection;
         public CarDAL()
-        {
+        { 
             String connetionString = "";
             connetionString = @"Server=LAPTOP-4J4IUVJ3\SQLEXPRESS;Database=DriversDB;User ID=dbconnect;Password=123456";
+            connetionString = ConfigurationManager.ConnectionStrings["SQlExpressConnection"].ConnectionString;
 
             myConnection = new SqlConnection(connetionString);
             try
@@ -78,17 +80,34 @@ namespace WindowsFormsApp1
             SqlParameter sqlParameter4 = new SqlParameter("Comments", car.Comments);
             sqlCommand.Parameters.Add(sqlParameter4);
 
+            sqlCommand.ExecuteScalar();
+        }
+        public void UpdateCar(Car car)
+        {
+            SqlCommand sqlCommand = new SqlCommand(@"Update Cars set CarSize = @CarSize, CarCompany=@CarCompany, CarColor= @CarColor, Comments=@Comments where Id = @Id", this.myConnection);
+
+            SqlParameter sqlParameter = new SqlParameter("ID", car.Id);
+            sqlCommand.Parameters.Add(sqlParameter);
+
+            SqlParameter sqlParameter1 = new SqlParameter("CarSize", car.Size);
+            sqlCommand.Parameters.Add(sqlParameter1);
+            SqlParameter sqlParameter2 = new SqlParameter("CarCompany", car.Company);
+            sqlCommand.Parameters.Add(sqlParameter2);
+            SqlParameter sqlParameter3 = new SqlParameter("CarColor", car.Color);
+            sqlCommand.Parameters.Add(sqlParameter3);
+            SqlParameter sqlParameter4 = new SqlParameter("Comments", car.Comments);
+            sqlCommand.Parameters.Add(sqlParameter4);
+
 
 
 
             sqlCommand.ExecuteScalar();
         }
-        public void UpdateCar(Car car)
-        {
-
-        }
         public void DeleteCar(Car car)
         {
+            SqlCommand sqlCommand = new SqlCommand(@"Delete * from Cars where Id = @Id", this.myConnection);
+            SqlParameter sqlParameter = new SqlParameter("ID", car.Id);
+            sqlCommand.Parameters.Add(sqlParameter);
 
         }
 

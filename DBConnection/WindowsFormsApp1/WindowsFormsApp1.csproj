@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,12 +54,14 @@
     <Compile Include="CarBlankForm.Designer.cs">
       <DependentUpon>CarBlankForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarDAL.cs" />
     <Compile Include="CarList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarList.Designer.cs">
       <DependentUpon>CarList.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriversDal.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

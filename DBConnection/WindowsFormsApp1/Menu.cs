@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace WindowsFormsApp1
         public Menu()
         {
             InitializeComponent();
+
+            txtCompanyName.Text = ConfigurationManager.AppSettings["CompanyName"];
         }
 
         private void button1_Click(object sender, EventArgs e)

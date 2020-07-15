@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         public CarDAL()
         { 
             String connetionString = "";
-            connetionString = @"Server=LAPTOP-4J4IUVJ3\SQLEXPRESS;Database=DriversDB;User ID=dbconnect;Password=123456";
+            //connetionString = @"Server=LAPTOP-4J4IUVJ3\SQLEXPRESS;Database=DriversDB;User ID=dbconnect;Password=123456";
             connetionString = ConfigurationManager.ConnectionStrings["SQlExpressConnection"].ConnectionString;
 
             myConnection = new SqlConnection(connetionString);

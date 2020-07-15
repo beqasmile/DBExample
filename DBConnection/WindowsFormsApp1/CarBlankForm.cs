@@ -48,25 +48,7 @@ namespace WindowsFormsApp1
             }
 
 
-            //SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES (+" + txtId.Text + ", "+ txtSize.Text + ",'" + txtCompany.Text +  "', '" + txtComments.Text +"')", cnn);
-            SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Car VALUES @ID, @CarSize, @CarCompany, @CarColor, Comments", cnn);
-
-            SqlParameter sqlParameter = new SqlParameter("ID", txtId.Text);
-            sqlCommand.Parameters.Add(sqlParameter);
-
-            SqlParameter sqlParameter1 = new SqlParameter("CarSize", txtSize.Text);
-            sqlCommand.Parameters.Add(sqlParameter1);
-            SqlParameter sqlParameter2 = new SqlParameter("CarCompany", txtCompany.Text);
-            sqlCommand.Parameters.Add(sqlParameter2);
-            SqlParameter sqlParameter3 = new SqlParameter("CarColor", txtColor.Text);
-            sqlCommand.Parameters.Add(sqlParameter3);
-            SqlParameter sqlParameter4 = new SqlParameter("Comments", txtComments.Text);
-            sqlCommand.Parameters.Add(sqlParameter4);
-
-
-
-
-            sqlCommand.ExecuteScalar();
+           
 
             MessageBox.Show("Succeded ! ");
 

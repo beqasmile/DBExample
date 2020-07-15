@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         private int color;
         private string comments;
 
-        public Car(int id, int size, string company, int color, string comments)
+        public Car(int id, string company, int size,  int color, string comments)
         {
             this.id = id;
             this.size = size;

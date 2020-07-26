@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CarUI
 {
-    public partial class CarBlankForm : Form 
+    public partial class CarBlankForm : Form , IObserverNotify
     {
         private int numberOfCars = 0;
         public CarBlankForm()

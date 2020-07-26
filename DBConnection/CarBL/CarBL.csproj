@@ -42,10 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
+    <Compile Include="CarConnection.cs" />
     <Compile Include="CarDAL.cs" />
+    <Compile Include="CarServerLogic.cs" />
     <Compile Include="DriversDal.cs" />
+    <Compile Include="ICarServerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarCommon\CarCommon.csproj">
+      <Project>{ca7552d0-35e4-464f-a1f0-9811d1cb357f}</Project>
+      <Name>CarCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

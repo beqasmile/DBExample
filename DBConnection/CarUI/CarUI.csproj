@@ -53,12 +53,15 @@
     <Compile Include="CarBlankForm.Designer.cs">
       <DependentUpon>CarBlankForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarDataST.cs" />
     <Compile Include="CarList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarList.Designer.cs">
       <DependentUpon>CarList.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarObserver.cs" />
+    <Compile Include="IObserverNotify.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +106,10 @@
     <ProjectReference Include="..\CarBL\CarBL.csproj">
       <Project>{2920dab9-4e3b-43d9-85f1-e9482befb056}</Project>
       <Name>CarBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarCommon\CarCommon.csproj">
+      <Project>{ca7552d0-35e4-464f-a1f0-9811d1cb357f}</Project>
+      <Name>CarCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

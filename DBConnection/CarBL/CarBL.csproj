@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CarConnection.cs" />
     <Compile Include="CarDAL.cs" />
+    <Compile Include="CarFactory.cs" />
     <Compile Include="CarServerLogic.cs" />
     <Compile Include="DriversDal.cs" />
     <Compile Include="DriverServerLogic.cs" />

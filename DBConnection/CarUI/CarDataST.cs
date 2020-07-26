@@ -1,4 +1,5 @@
 ﻿using CarBL;
+using CarCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,10 @@ namespace CarUI
         private CarDataST ()
         {
             Cars = new List<Car>();
-            ICarServerLogic carSL;
-            carSL = new CarServerLogic();
-            Cars = carSL.SelectCars();
+            CarFactory carFactory;
+            carFactory = new CarFactory();
+            ICarServerLogic carServerLogic = carFactory.CreateCarServerLogic();
+            _cars = carServerLogic.SelectCars();
         }
 
         public List<Car> Cars { get => _cars; set => _cars = value; }

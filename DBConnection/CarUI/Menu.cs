@@ -98,5 +98,11 @@ namespace CarUI
             // C# is a Case Sensitive language!!! "Hello World" != "Hello WOrld"
             int leng = 2;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            object data = "my very important text to nofify";
+            CarObserver.GetInstance().MakeNotification(data);
+        }
     }
 }

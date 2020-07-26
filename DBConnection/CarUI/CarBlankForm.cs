@@ -21,9 +21,10 @@ namespace CarUI
             CarObserver.GetInstance().AddNotifier(this);
         }
 
-        public void Notification()
+        public void Notification(object somedata)
         {
             alertButton.Visible = true;
+            alertButton.Text = somedata.ToString();
 
         }
 

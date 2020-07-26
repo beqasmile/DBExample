@@ -8,6 +8,6 @@ namespace CarUI
 {
     public interface IObserverNotify
     {
-        void Notification();
+        void Notification(object somedata);
     }
 }

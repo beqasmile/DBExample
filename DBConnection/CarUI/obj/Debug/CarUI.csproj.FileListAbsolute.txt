@@ -28,3 +28,5 @@ C:\dev\dayDB\DBConnection\CarUI\obj\Debug\CarUI.csproj.CoreCompileInputs.cache
 C:\dev\dayDB\DBConnection\CarUI\obj\Debug\CarUI.csproj.CopyComplete
 C:\dev\dayDB\DBConnection\CarUI\obj\Debug\CarUI.exe
 C:\dev\dayDB\DBConnection\CarUI\obj\Debug\CarUI.pdb
+C:\dev\dayDB\DBConnection\CarUI\bin\Debug\CarCommon.dll
+C:\dev\dayDB\DBConnection\CarUI\bin\Debug\CarCommon.pdb

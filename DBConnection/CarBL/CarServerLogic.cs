@@ -16,7 +16,8 @@ namespace CarBL
 
         public List<Car> SelectCars()
         {
-            throw new NotImplementedException();
+            CarDAL carDAL = new CarDAL();
+            return carDAL.SelectCars();
         }
 
         public void UpdateCar(Car car)

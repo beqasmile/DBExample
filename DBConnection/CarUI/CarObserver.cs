@@ -8,7 +8,7 @@ namespace CarUI
 {
     public class CarObserver
     {
-        private CarObserver _instance;
+        private static CarObserver _instance;
 
 
         private List<IObserverNotify> observerNotifies;
@@ -40,6 +40,14 @@ namespace CarUI
             if (this.observerNotifies.Contains(observerNotify))
             {
                 this.observerNotifies.Remove(observerNotify);
+            }
+        }
+
+        public void MakeNotification(object somedata)
+        {
+            foreach (IObserverNotify objNotify in this.observerNotifies)
+            {
+                objNotify.Notification(somedata);
             }
         }
     }

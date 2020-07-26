@@ -46,7 +46,9 @@
     <Compile Include="CarDAL.cs" />
     <Compile Include="CarServerLogic.cs" />
     <Compile Include="DriversDal.cs" />
+    <Compile Include="DriverServerLogic.cs" />
     <Compile Include="ICarServerLogic.cs" />
+    <Compile Include="IDriverServerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -33,6 +33,23 @@ namespace CarBL
             }
         }
 
+        public bool CheckDriverExists(Driver driver)
+        {
+            using (SqlCommand command = new SqlCommand("SELECT * FROM Driver where id= @ID ", CarConnection.GetInstance().SqlConnection))
+            {
+                SqlParameter sqlParameter = new SqlParameter("ID", driver.Id);
+                command.Parameters.Add(sqlParameter);
+
+                List<Driver> driverList = new List<Driver>();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
         public void InsertDriver(Driver driver)
         {
             SqlCommand sqlCommand = new SqlCommand(@"INSERT INTO Drivers VALUES @ID, @DriverName, @Age, @Address, @DriversLessonType", CarConnection.GetInstance().SqlConnection);
